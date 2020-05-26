@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from "react"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+
+import UploadChat from "./components/UploadChat"
+
+import YearPage from "./components/YearPage"
+import MonthPage from "./components/MonthPage"
+import DayPage from "./components/DayPage"
+import "./css/main.css"
+import TopicPage from "./components/TopicPage"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <div className="container">
+        <Fragment>
+          <Route exact path="/" component={UploadChat} />
+          <Switch>
+            <Route exact path="/dashboard" component={YearPage} />
+            <Route exact path="/months" component={MonthPage} />
+            <Route exact path="/days" component={DayPage} />
+            <Route exact path="/topics" component={TopicPage} />
+          </Switch>
+        </Fragment>
+      </div>
+    </Router>
+  )
 }
 
-export default App;
+export default App
