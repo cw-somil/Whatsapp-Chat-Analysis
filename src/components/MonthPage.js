@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react"
-
+import Loader from "react-loader-spinner"
 import { useHistory } from "react-router-dom"
 import HorizontalChart from "./HorizontalChart"
 import axios from "axios"
@@ -37,20 +37,30 @@ const MonthPage = ({ location }) => {
   return (
     <Fragment>
       {state.loading ? (
-        <h1>Processing Data..</h1>
+        <Loader type="Bars" color="#ffffff" height={80} width={80} />
       ) : (
         Object.keys(location.state["data"]["months"]).map((month) => (
           <div className="card">
-            <button onClick={() => redirectDays(month)}>{month}</button>
+            <button
+              className="btn-card top"
+              onClick={() => redirectDays(month)}
+            >
+              {month}
+            </button>
 
             <HorizontalChart
               apiData={{
                 labels: [month],
                 data: [location.state["data"]["months"][month]["total_words"]],
-                maxval: 15000,
+                maxval: location.state["data"]["maxval"],
               }}
             />
-            <button onClick={() => genTopics(month)}>Generate Topics</button>
+            <button
+              className="btn-card bottom"
+              onClick={() => genTopics(month)}
+            >
+              Generate Topics
+            </button>
           </div>
         ))
       )}

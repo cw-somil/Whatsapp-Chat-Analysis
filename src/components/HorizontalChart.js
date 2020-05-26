@@ -92,6 +92,7 @@ const HorizontalChart = ({ apiData }) => {
     title: {
       display: true,
       text: "Word Frequency",
+      fontColor: "#ffffff",
     },
 
     legend: {
@@ -99,7 +100,7 @@ const HorizontalChart = ({ apiData }) => {
       labels: {
         boxWidth: 50,
         fontSize: 10,
-        fontColor: "#bbb",
+        fontColor: "#ffffff",
         padding: 5,
       },
     },
@@ -111,19 +112,36 @@ const HorizontalChart = ({ apiData }) => {
             beginAtZero: true,
             min: 0,
             max: apiData.maxval,
+            fontColor: "#ffffff",
+          },
+          gridLines: {
+            display: false,
           },
         },
       ],
       yAxes: [
         {
+          ticks: {
+            fontColor: "#ffffff",
+          },
           categoryPercentage: 1.0,
           barPercentage: 0.8,
+          gridLines: {
+            display: false,
+          },
         },
       ],
     },
   }
   return (
-    <div>
+    <div
+      style={{
+        margin: "3rem 1rem 3rem 1rem",
+        border: "1px solid gray",
+        padding: "0.2rem",
+        borderRadius: "0.3rem",
+      }}
+    >
       <HorizontalBar data={data} options={chartOptions} />
     </div>
   )

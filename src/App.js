@@ -8,10 +8,14 @@ import MonthPage from "./components/MonthPage"
 import DayPage from "./components/DayPage"
 import "./css/main.css"
 import TopicPage from "./components/TopicPage"
+import Navbar from "./components/layout/Navbar"
+import Hero from "./components/layout/Hero"
 
 function App() {
   return (
     <Router>
+      <Navbar />
+      <Route exact path="/" component={Hero} />
       <div className="container">
         <Fragment>
           <Route exact path="/" component={UploadChat} />

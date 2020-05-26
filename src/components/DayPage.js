@@ -6,7 +6,7 @@ const DayPage = ({ location }) => {
   return (
     <Fragment>
       <div className="card" style={{ border: "none", padding: "5rem" }}>
-        <h1>Days</h1>
+        <h1 style={{ color: "#ffffff" }}>Days</h1>
         <div style={{ width: "80vw", height: "80vh" }}>
           <VerticalChart
             apiData={{

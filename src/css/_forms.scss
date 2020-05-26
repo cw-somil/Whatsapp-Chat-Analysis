@@ -1,0 +1,33 @@
+form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-file-upload::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+input[type="file"] {
+  color: transparent;
+}
+.custom-file-upload::before {
+  content: "Upload Your Chat File";
+  display: inline-block;
+  border: 1px solid var(--text-color);
+  border-radius: 1.5rem;
+
+  padding: 0.8rem;
+  color: var(--text-color);
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.8rem;
+  transition: all 0.5s;
+}
+.custom-file-upload:hover::before {
+  border-color: white;
+  color: white;
+}

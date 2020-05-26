@@ -1,17 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap");
-* {
-  font-family: "Nunito", sans-serif;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+.btn,
+input[type="submit"] {
+  border: none;
+  border-radius: 1.5rem;
+  background-color: white;
+  color: black;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.8rem;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
-.alert {
-  width: 100%;
-  padding: 0.5rem;
-  margin: 1rem;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 600;
+.btn:hover,
+input[type="submit"]:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .container {
@@ -30,8 +34,7 @@
       flex-wrap: wrap;
 }
 
-form {
-  width: 100%;
+.hero {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,28 +44,125 @@ form {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 1rem;
+  height: 100vh;
+  color: var(--text-color);
+  background-color: #4b4b4b;
 }
 
-form input {
-  margin: 10px;
-}
-
-button,
-input {
-  border: none;
-  border-radius: 0.8rem;
-  background-color: black;
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
   color: white;
-  font-size: 1.2rem;
-  padding: 0.5rem;
-  -webkit-transition: all 1s;
-  transition: all 1s;
 }
 
-button:hover,
-input:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+.hero h2 {
+  font-size: 2rem;
+}
+
+.hero-item {
+  padding: 2rem;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.tooltip-container {
+  width: 100%;
+}
+
+.tooltip {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 400px;
+  height: 250px;
+  background-color: #29dce2;
+  padding: 0 1rem 1rem 1rem;
+  border-radius: 1rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-clip-path: circle(15% at 50% 0);
+          clip-path: circle(15% at 50% 0);
+  -webkit-transition: -webkit-clip-path 1s;
+  transition: -webkit-clip-path 1s;
+  transition: clip-path 1s;
+  transition: clip-path 1s, -webkit-clip-path 1s;
+}
+
+.tooltip h2 {
+  font-size: 1rem;
+}
+
+.tooltip p {
+  color: #2c2c2c;
+}
+
+.tooltip .info-icon {
+  margin-top: -10px;
+  width: 100%;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.tooltip .info-icon img {
+  width: 2rem;
+  padding: 0.2rem;
+}
+
+.tooltip:hover {
+  -webkit-clip-path: circle(100% at 50% 0);
+          clip-path: circle(100% at 50% 0);
+}
+
+.navbar {
+  background-color: #313131;
+  padding: 1.5rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navbar .brand {
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.navbar .developer {
+  color: var(--text-color);
+  font-size: 1rem;
 }
 
 .card {
@@ -80,15 +180,126 @@ input:hover {
       -ms-flex-align: center;
           align-items: center;
   margin: 1rem;
-  padding: 1rem;
-  border: 1px solid #cecccc;
+  padding: 0rem;
+  border: 1px solid #3b3b3b;
   border-radius: 2rem;
   -webkit-transition: all 1s;
   transition: all 1s;
 }
 
+.card .btn-card {
+  width: 100%;
+  background-color: #e8505b;
+  border: none;
+  border-radius: 1.5rem;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.8rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.card .top {
+  border-radius: 2rem 2rem 0rem 0rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.card .bottom {
+  border-radius: 0 0 2rem 2rem;
+}
+
+.card .btn-card:hover {
+  background-color: white;
+  color: black;
+}
+
 .card:hover {
-  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.479);
-          box-shadow: 0 0 10px rgba(128, 128, 128, 0.479);
+  -webkit-box-shadow: 0 0 15px rgba(58, 58, 58, 0.911);
+          box-shadow: 0 0 15px rgba(58, 58, 58, 0.911);
+}
+
+.alert {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.custom-file-upload::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+input[type="file"] {
+  color: transparent;
+}
+
+.custom-file-upload::before {
+  content: "Upload Your Chat File";
+  display: inline-block;
+  border: 1px solid var(--text-color);
+  border-radius: 1.5rem;
+  padding: 0.8rem;
+  color: var(--text-color);
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.8rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.custom-file-upload:hover::before {
+  border-color: white;
+  color: white;
+}
+
+* {
+  font-family: "Nunito", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+:root {
+  --bg-color: rgb(49, 49, 49);
+  --text-color: rgb(180, 180, 180);
+}
+
+html {
+  background-color: var(--bg-color);
+}
+
+.note {
+  color: var(--text-color);
+  margin-top: 4rem;
 }
 /*# sourceMappingURL=main.css.map */

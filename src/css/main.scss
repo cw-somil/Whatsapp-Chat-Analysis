@@ -1,65 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap");
+@import "buttons";
+@import "container";
+@import "hero";
+@import "tooltip";
+@import "navbar";
+@import "card";
+@import "alert";
+@import "forms";
 
 * {
   font-family: "Nunito", sans-serif;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.alert {
-  width: 100%;
-
-  padding: 0.5rem;
-  margin: 1rem;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 600;
+html {
+  scroll-behavior: smooth;
 }
-.container {
-  padding: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-shrink: 0;
-  flex-wrap: wrap;
+a {
+  text-decoration: none;
+  color: black;
 }
 
-form {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  input {
-    margin: 10px;
-  }
+:root {
+  --bg-color: rgb(49, 49, 49);
+  --text-color: rgb(180, 180, 180);
 }
-button,
-input {
-  border: none;
-  border-radius: 0.8rem;
-  background-color: black;
-  color: white;
-  font-size: 1.2rem;
-  padding: 0.5rem;
-  transition: all 1s;
+html {
+  background-color: var(--bg-color);
 }
 
-button:hover,
-input:hover {
-  transform: scale(1.05);
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem;
-  padding: 1rem;
-  border: 1px solid rgb(206, 204, 204);
-  border-radius: 2rem;
-  transition: all 1s;
-}
-
-.card:hover {
-  box-shadow: 0 0 10px rgba(128, 128, 128, 0.479);
+.note {
+  color: var(--text-color);
+  margin-top: 4rem;
 }

@@ -1,0 +1,16 @@
+.btn,
+input[type="submit"] {
+  border: none;
+  border-radius: 1.5rem;
+  background-color: white;
+  color: black;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.8rem;
+  transition: all 1s;
+}
+
+.btn:hover,
+input[type="submit"]:hover {
+  transform: scale(1.05);
+}

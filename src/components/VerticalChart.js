@@ -92,6 +92,7 @@ const VerticalChart = ({ apiData }) => {
     title: {
       display: true,
       text: "Word Frequency",
+      fontColor: "#ffffff",
     },
 
     legend: {
@@ -99,7 +100,7 @@ const VerticalChart = ({ apiData }) => {
       labels: {
         boxWidth: 50,
         fontSize: 10,
-        fontColor: "#bbb",
+        fontColor: "#ffffff",
         padding: 5,
       },
     },
@@ -111,11 +112,21 @@ const VerticalChart = ({ apiData }) => {
             beginAtZero: true,
             min: 0,
             max: apiData.maxval,
+            fontColor: "#ffffff",
+          },
+          gridLines: {
+            color: "rgb(96,96,96)",
           },
         },
       ],
       xAxes: [
         {
+          ticks: {
+            fontColor: "ffffff",
+          },
+          gridLines: {
+            color: "rgb(96,96,96)",
+          },
           categoryPercentage: 1.0,
           barPercentage: 0.8,
         },

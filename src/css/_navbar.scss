@@ -1,0 +1,16 @@
+.navbar {
+  background-color: rgb(49, 49, 49);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .brand {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  .developer {
+    color: var(--text-color);
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,30 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  height: 100vh;
+  color: var(--text-color);
+  background-color: rgb(75, 75, 75);
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: white;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+.hero-item {
+  padding: 2rem;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.w-60 {
+  width: 60%;
+}
