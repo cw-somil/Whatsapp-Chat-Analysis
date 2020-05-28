@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useEffect } from "react"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
 import UploadChat from "./components/UploadChat"
@@ -10,8 +10,14 @@ import "./css/main.css"
 import TopicPage from "./components/TopicPage"
 import Navbar from "./components/layout/Navbar"
 import Hero from "./components/layout/Hero"
+import ReactGa from "react-ga"
+
+ReactGa.initialize("UA-167965521-1")
 
 function App() {
+  useEffect(() => {
+    ReactGa.pageview(window.location.pathname + window.location.search)
+  }, [])
   return (
     <Router>
       <Navbar />

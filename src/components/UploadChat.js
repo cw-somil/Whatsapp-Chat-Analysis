@@ -25,7 +25,9 @@ const UploadChat = () => {
     postData.append("file", data.selectedFile)
     try {
       setData({ loading: true })
-      const res = await axios.post("http://127.0.0.1:4555/upload", postData)
+
+      const res = await axios.post("http://165.22.208.188/upload", postData)
+
       setData({ loading: false })
       if (res.data) {
         setData({ completeData: res.data })
@@ -62,7 +64,7 @@ const UploadChat = () => {
               <input type="submit" name="submit" />
             </form>
             <h3 className="note">
-              Note: The processing usually takes 30 seconds due to heavy NLP
+              Note: The processing usually takes 10-20 seconds due to heavy NLP
               computations
             </h3>
           </div>

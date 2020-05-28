@@ -15,36 +15,44 @@ const YearPage = ({ location }) => {
       state: {
         data: location.state["data"][year],
         corpus: location.state["corpus"],
+        err: "",
       },
     })
   }
 
   const genTopics = async (year) => {
-    setState({ loading: true })
-    const res = await axios.post(
-      "http://127.0.0.1:4555/gen_topics",
-      {
-        data: location.state["data"][year]["all_words"],
-        corpus: location.state["corpus"],
-      },
-      {
-        headers: {
-          "content-type": "application/json",
+    try {
+      setState({ loading: true })
+
+      const res = await axios.post(
+        "http://165.22.208.188/gen_topics",
+        {
+          data: location.state["data"][year]["all_words"],
+          corpus: location.state["corpus"],
         },
-      }
-    )
-    setState({ loading: false })
-    return history.push({
-      pathname: "/topics",
-      state: res.data["data"],
-    })
+        {
+          headers: {
+            "content-type": "application/json",
+          },
+        }
+      )
+
+      setState({ loading: false })
+      return history.push({
+        pathname: "/topics",
+        state: res.data["data"],
+      })
+    } catch (err) {
+      setState({ loading: false, err: err.message })
+    }
   }
   return (
     <Fragment>
+      <h1 style={{ color: "#ffffff" }}>{state.err}</h1>
       <div className="tooltip-container">
         <div className="tooltip">
           <div className="info-icon">
-            <img src={info} />
+            <img src={info} alt="Info Icon" />
           </div>
           <h2>How to Use the this page?</h2>
           <p>
@@ -64,7 +72,7 @@ const YearPage = ({ location }) => {
         Object.keys(location.state["data"])
           .sort()
           .map((year) => (
-            <div className="card">
+            <div key={year} className="card">
               <button
                 className="btn-card top"
                 onClick={() => redirectMonths(year)}

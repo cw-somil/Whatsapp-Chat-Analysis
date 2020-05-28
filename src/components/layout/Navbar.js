@@ -3,8 +3,8 @@ import React from "react"
 const Navbar = () => {
   return (
     <div className="navbar">
-      <div class="brand">Whatsapp Analysis</div>
-      <div class="developer">
+      <div className="brand">Whatsapp Analysis</div>
+      <div className="developer">
         Developed By{" "}
         <span>
           <a

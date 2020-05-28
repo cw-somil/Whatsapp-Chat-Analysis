@@ -2,7 +2,6 @@ import React, { Fragment } from "react"
 import VerticalChart from "./VerticalChart"
 
 const DayPage = ({ location }) => {
-  console.log(location.state)
   return (
     <Fragment>
       <div className="card" style={{ border: "none", padding: "5rem" }}>

@@ -75,6 +75,15 @@ input[type="submit"]:hover {
 }
 
 .tooltip-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
 }
 
@@ -90,7 +99,7 @@ input[type="submit"]:hover {
           justify-content: center;
   width: 400px;
   height: 250px;
-  background-color: #29dce2;
+  background-color: white;
   padding: 0 1rem 1rem 1rem;
   border-radius: 1rem;
   -ms-flex-wrap: wrap;
@@ -99,10 +108,8 @@ input[type="submit"]:hover {
   margin-right: auto;
   -webkit-clip-path: circle(15% at 50% 0);
           clip-path: circle(15% at 50% 0);
-  -webkit-transition: -webkit-clip-path 1s;
-  transition: -webkit-clip-path 1s;
-  transition: clip-path 1s;
-  transition: clip-path 1s, -webkit-clip-path 1s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .tooltip h2 {
@@ -138,6 +145,7 @@ input[type="submit"]:hover {
 .tooltip:hover {
   -webkit-clip-path: circle(100% at 50% 0);
           clip-path: circle(100% at 50% 0);
+  background-color: #29dce2;
 }
 
 .navbar {
@@ -301,5 +309,40 @@ html {
 .note {
   color: var(--text-color);
   margin-top: 4rem;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    padding: 1rem;
+  }
+  .navbar {
+    padding: 1.5rem 1rem;
+  }
+  .hero {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+  .hero .hero-item {
+    text-align: center;
+  }
+  .hero .w-40 {
+    width: 100%;
+  }
+  .hero .w-60 {
+    width: 100%;
+  }
+  #hero-img {
+    display: none;
+  }
 }
 /*# sourceMappingURL=main.css.map */

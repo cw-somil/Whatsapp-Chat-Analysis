@@ -80,6 +80,8 @@ const HorizontalChart = ({ apiData }) => {
         ),
         borderColor: colors,
         borderWidth: 1,
+        categoryPercentage: 1.0,
+        barPercentage: 0.8,
       },
     ],
   }
@@ -124,8 +126,7 @@ const HorizontalChart = ({ apiData }) => {
           ticks: {
             fontColor: "#ffffff",
           },
-          categoryPercentage: 1.0,
-          barPercentage: 0.8,
+
           gridLines: {
             display: false,
           },

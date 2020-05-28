@@ -16,8 +16,8 @@ const Hero = () => {
           <a href="#upload">Let's Start!</a>
         </button>
       </div>
-      <div className="hero-item w-40">
-        <img src={hero} />
+      <div id="hero-img" className="hero-item w-40">
+        <img src={hero} alt="Hero" />
       </div>
     </div>
   )

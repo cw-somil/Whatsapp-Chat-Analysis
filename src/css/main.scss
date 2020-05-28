@@ -35,3 +35,40 @@ html {
   color: var(--text-color);
   margin-top: 4rem;
 }
+
+@media screen and (max-width: 700px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .navbar {
+    padding: 1.5rem 1rem;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+    .hero-item {
+      text-align: center;
+    }
+    .w-40 {
+      width: 100%;
+    }
+
+    .w-60 {
+      width: 100%;
+    }
+  }
+
+  #hero-img {
+    display: none;
+  }
+}

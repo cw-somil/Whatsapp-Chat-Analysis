@@ -17,7 +17,7 @@ const MonthPage = ({ location }) => {
   const genTopics = async (month) => {
     setState({ loading: true })
     const res = await axios.post(
-      "http://127.0.0.1:4555/gen_topics",
+      "http://165.22.208.188/gen_topics",
       {
         data: location.state["data"]["months"][month]["all_words"],
         corpus: location.state["corpus"],
@@ -40,7 +40,7 @@ const MonthPage = ({ location }) => {
         <Loader type="Bars" color="#ffffff" height={80} width={80} />
       ) : (
         Object.keys(location.state["data"]["months"]).map((month) => (
-          <div className="card">
+          <div key={month} className="card">
             <button
               className="btn-card top"
               onClick={() => redirectDays(month)}
