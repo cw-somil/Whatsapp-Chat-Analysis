@@ -37,6 +37,7 @@ const UploadChat = () => {
         }
       } catch (err) {
         console.log(err)
+        setData({ err: "Server Error", loading: false })
       }
     } else {
       setData({ err: "Please upload a valid txt file." })
