@@ -10,31 +10,36 @@ const UploadChat = () => {
     completeData: null,
     loading: false,
     filename: "Upload Your Chat File",
+    err: "",
   })
 
   const fileUpload = (e) => {
     e.preventDefault()
     setData({
       selectedFile: e.target.files[0],
-      filename: e.target.files[0].name + " Uploaded!",
+      filename: e.target.files[0].name,
     })
   }
 
   const submitChat = async (e) => {
     e.preventDefault()
     let postData = new FormData()
-    postData.append("file", data.selectedFile)
-    try {
-      setData({ loading: true })
+    if (data.filename.split(".").pop().toLowerCase() === "txt") {
+      postData.append("file", data.selectedFile)
+      try {
+        setData({ loading: true })
 
-      const res = await axios.post("http://165.22.208.188/upload", postData)
+        const res = await axios.post("http://165.22.208.188/upload", postData)
 
-      setData({ loading: false })
-      if (res.data) {
-        setData({ completeData: res.data })
+        setData({ loading: false })
+        if (res.data) {
+          setData({ completeData: res.data })
+        }
+      } catch (err) {
+        console.log(err)
       }
-    } catch (err) {
-      console.log(err)
+    } else {
+      setData({ err: "Please upload a valid txt file." })
     }
   }
 
@@ -49,7 +54,11 @@ const UploadChat = () => {
             }}
           />
         ) : (
-          <div className="alert">{data.filename}</div>
+          <div className="alert">
+            {data.err}
+            <br />
+            {data.filename}
+          </div>
         )}
         {data.loading ? (
           <div className="container">
