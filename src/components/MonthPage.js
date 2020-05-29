@@ -37,32 +37,38 @@ const MonthPage = ({ location }) => {
   return (
     <Fragment>
       {state.loading ? (
-        <Loader type="Bars" color="#ffffff" height={80} width={80} />
+        <div className="container">
+          <Loader type="Bars" color="#ffffff" height={80} width={80} />
+        </div>
       ) : (
-        Object.keys(location.state["data"]["months"]).map((month) => (
-          <div key={month} className="card">
-            <button
-              className="btn-card top"
-              onClick={() => redirectDays(month)}
-            >
-              {month}
-            </button>
+        <div className="container">
+          {Object.keys(location.state["data"]["months"]).map((month) => (
+            <div key={month} className="card">
+              <button
+                className="btn-card top"
+                onClick={() => redirectDays(month)}
+              >
+                {month}
+              </button>
 
-            <HorizontalChart
-              apiData={{
-                labels: [month],
-                data: [location.state["data"]["months"][month]["total_words"]],
-                maxval: location.state["data"]["maxval"],
-              }}
-            />
-            <button
-              className="btn-card bottom"
-              onClick={() => genTopics(month)}
-            >
-              Generate Topics
-            </button>
-          </div>
-        ))
+              <HorizontalChart
+                apiData={{
+                  labels: [month],
+                  data: [
+                    location.state["data"]["months"][month]["total_words"],
+                  ],
+                  maxval: location.state["data"]["maxval"],
+                }}
+              />
+              <button
+                className="btn-card bottom"
+                onClick={() => genTopics(month)}
+              >
+                Generate Topics
+              </button>
+            </div>
+          ))}
+        </div>
       )}
     </Fragment>
   )

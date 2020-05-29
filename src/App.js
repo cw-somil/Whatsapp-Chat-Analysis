@@ -11,6 +11,7 @@ import TopicPage from "./components/TopicPage"
 import Navbar from "./components/layout/Navbar"
 import Hero from "./components/layout/Hero"
 import ReactGa from "react-ga"
+import Footer from "./components/layout/Footer"
 
 ReactGa.initialize("UA-167965521-1")
 
@@ -22,17 +23,16 @@ function App() {
     <Router>
       <Navbar />
       <Route exact path="/" component={Hero} />
-      <div className="container">
-        <Fragment>
-          <Route exact path="/" component={UploadChat} />
-          <Switch>
-            <Route exact path="/dashboard" component={YearPage} />
-            <Route exact path="/months" component={MonthPage} />
-            <Route exact path="/days" component={DayPage} />
-            <Route exact path="/topics" component={TopicPage} />
-          </Switch>
-        </Fragment>
-      </div>
+      <Route exact path="/" component={UploadChat} />
+      <Fragment>
+        <Switch>
+          <Route exact path="/dashboard" component={YearPage} />
+          <Route exact path="/months" component={MonthPage} />
+          <Route exact path="/days" component={DayPage} />
+          <Route exact path="/topics" component={TopicPage} />
+        </Switch>
+      </Fragment>
+      <Footer />
     </Router>
   )
 }

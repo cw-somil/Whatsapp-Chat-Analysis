@@ -2,6 +2,7 @@ import React, { useState, Fragment } from "react"
 import axios from "axios"
 import Loader from "react-loader-spinner"
 import { Redirect } from "react-router-dom"
+import Steps from "./Steps"
 
 const UploadChat = () => {
   const [data, setData] = useState({
@@ -51,9 +52,11 @@ const UploadChat = () => {
           <div className="alert">{data.filename}</div>
         )}
         {data.loading ? (
-          <Loader type="Bars" color="#ffffff" height={80} width={80} />
+          <div className="container">
+            <Loader type="Bars" color="#ffffff" height={80} width={80} />
+          </div>
         ) : (
-          <div>
+          <div className="container">
             <form onSubmit={(e) => submitChat(e)}>
               <input
                 type="file"
@@ -69,6 +72,7 @@ const UploadChat = () => {
             </h3>
           </div>
         )}
+        <Steps />
       </section>
     </Fragment>
   )
