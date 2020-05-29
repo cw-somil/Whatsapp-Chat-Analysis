@@ -446,6 +446,10 @@ html {
   margin-top: 4rem;
 }
 
+.howto {
+  max-width: 100%;
+}
+
 @media screen and (max-width: 700px) {
   .container {
     padding: 1rem;

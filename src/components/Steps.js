@@ -17,9 +17,9 @@ const Steps = () => {
       >
         How to Export Chat from Whatsapp?
       </h1>
-      <img src={step1} />
-      <img src={step2} />
-      <img src={step3} />
+      <img className="howto" src={step1} />
+      <img className="howto" src={step2} />
+      <img className="howto" src={step3} />
     </div>
   )
 }
