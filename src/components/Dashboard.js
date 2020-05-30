@@ -5,7 +5,12 @@ const Dashboard = ({ year, months }) => {
     <Fragment>
       <div
         className="dashboard"
-        style={{ fontSize: "2.5rem", color: "white", fontWeight: "700" }}
+        style={{
+          fontSize: "2.5rem",
+          color: "white",
+          fontWeight: "700",
+          textAlign: "center",
+        }}
       >
         Your Whatsapp Rewind
       </div>
