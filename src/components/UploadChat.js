@@ -29,7 +29,7 @@ const UploadChat = () => {
     console.log(data.filesize)
     if (
       data.filename.split(".").pop().toLowerCase() === "txt" &&
-      data.filesize < 1600000
+      data.filesize < 2600000
     ) {
       postData.append("file", data.selectedFile)
       try {
@@ -53,7 +53,7 @@ const UploadChat = () => {
     } else {
       setData({
         err:
-          "Please upload a valid txt file or Upload a Text File which is less than 1.5Mb",
+          "Please upload a valid txt file or Upload a Text File which is less than 2.5Mb",
       })
     }
   }
@@ -91,7 +91,7 @@ const UploadChat = () => {
               </form>
               <h3 className="note" style={{ textAlign: "center" }}>
                 NO PERSONAL DATA IS STORED ON THE SERVERS. FILE SIZE LIMIT:
-                1.5Mb
+                2.5Mb
                 <br /> Note: The processing usually takes 10-20 seconds due to
                 heavy NLP computations.
               </h3>
