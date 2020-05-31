@@ -4,7 +4,6 @@ import {
   WhatsappIcon,
   FacebookShareButton,
   FacebookIcon,
-  FacebookShareCount,
 } from "react-share"
 
 const Footer = () => {
