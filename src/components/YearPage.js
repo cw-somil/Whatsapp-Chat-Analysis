@@ -79,35 +79,34 @@ const YearPage = ({ location }) => {
                 </p>
               </div>
             </div>
-            <div style={{ backgroundColor: "rgb(49, 49, 49)" }}>
-              {Object.keys(location.state["data"])
-                .sort()
-                .map((year) => (
-                  <div key={year} className="card">
-                    <button
-                      className="btn-card top"
-                      onClick={() => redirectMonths(year)}
-                    >
-                      {year}
-                    </button>
 
-                    <HorizontalChart
-                      apiData={{
-                        labels: [year],
-                        data: [location.state["data"][year]["total_words"]],
-                        maxval: location.state["maxval"],
-                      }}
-                    />
+            {Object.keys(location.state["data"])
+              .sort()
+              .map((year) => (
+                <div key={year} className="card">
+                  <button
+                    className="btn-card top"
+                    onClick={() => redirectMonths(year)}
+                  >
+                    {year}
+                  </button>
 
-                    <button
-                      className="btn-card bottom"
-                      onClick={() => genTopics(year)}
-                    >
-                      Generate Topics
-                    </button>
-                  </div>
-                ))}
-            </div>
+                  <HorizontalChart
+                    apiData={{
+                      labels: [year],
+                      data: [location.state["data"][year]["total_words"]],
+                      maxval: location.state["maxval"],
+                    }}
+                  />
+
+                  <button
+                    className="btn-card bottom"
+                    onClick={() => genTopics(year)}
+                  >
+                    Generate Topics
+                  </button>
+                </div>
+              ))}
           </div>
         </Fragment>
       )}
