@@ -2,6 +2,7 @@
 @import "buttons";
 @import "container";
 @import "hero";
+@import "faq";
 @import "tooltip";
 @import "navbar";
 @import "card";
@@ -25,16 +26,15 @@ a {
 }
 
 :root {
-  --bg-color: rgb(49, 49, 49);
+  // --bg-color: rgb(49, 49, 49);
+  // --sec-bg-color: rgb(75, 75, 75);
+  --bg-color: rgb(36, 36, 36);
+  --sec-bg-color: rgb(36, 36, 36);
+  --primary: #e8505b;
   --text-color: rgb(180, 180, 180);
 }
 html {
   background-color: var(--bg-color);
-}
-
-.note {
-  color: var(--text-color);
-  margin-top: 4rem;
 }
 
 .howto {
@@ -46,7 +46,8 @@ html {
   }
 
   .navbar {
-    padding: 1.5rem 1rem;
+    padding: 1rem 1rem;
+    flex-direction: column;
   }
 
   .hero {

@@ -3,12 +3,14 @@ import { useHistory } from "react-router-dom"
 import HorizontalChart from "./HorizontalChart"
 import axios from "axios"
 import Loader from "react-loader-spinner"
-import info from "../img/info.png"
 import Dashboard from "./Dashboard"
+import Tooltip from "./Tooltip"
+import { PDFDownloadLink } from "@react-pdf/renderer"
+import ExportDoc from "./ExportDoc"
 
 const YearPage = ({ location }) => {
   const history = useHistory()
-  const [state, setState] = useState({ loading: false })
+  const [state, setState] = useState({ loading: false, btnloading: false })
 
   const redirectMonths = (year) => {
     return history.push({
@@ -21,6 +23,15 @@ const YearPage = ({ location }) => {
     })
   }
 
+  const redirectSearch = () => {
+    console.log(location.state["yt_meta"])
+    return history.push({
+      pathname: "/search",
+      state: {
+        meta: location.state["yt_meta"],
+      },
+    })
+  }
   const genTopics = async (year) => {
     try {
       setState({ loading: true })
@@ -57,28 +68,18 @@ const YearPage = ({ location }) => {
         </div>
       ) : (
         <Fragment>
+          <div className="container">
+            <button className="btn-outline" onClick={() => redirectSearch()}>
+              Search in Links
+            </button>
+          </div>
           <Dashboard
             year={location.state["best_year"]}
             months={location.state["best_months"]}
           />
+
           <div className="container">
-            <div className="tooltip-container">
-              <div className="tooltip">
-                <div className="info-icon">
-                  <img src={info} alt="Info Icon" />
-                </div>
-                <h2>How to Use the this page?</h2>
-                <p>
-                  Use the <b>Top Red Button</b> to go further into the{" "}
-                  <b>Months</b> of the <b>Year</b>
-                </p>
-                <p>
-                  Use the <b>Bottom Red Button</b> to know the <b>Key Topics</b>{" "}
-                  of the
-                  <b>Year</b>
-                </p>
-              </div>
-            </div>
+            <Tooltip />
 
             {Object.keys(location.state["data"])
               .sort()
@@ -107,6 +108,30 @@ const YearPage = ({ location }) => {
                   </button>
                 </div>
               ))}
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              marginBottom: "1rem",
+            }}
+          >
+            <button className="btn" style={{ padding: "0.4rem 0.8rem" }}>
+              <PDFDownloadLink
+                document={
+                  <ExportDoc
+                    year={location.state["best_year"]}
+                    months={location.state["best_months"]}
+                  />
+                }
+                fileName="WhatsappReport.pdf"
+              >
+                {({ blob, url, loading, error }) =>
+                  loading ? "Loading Document.." : "Download Report"
+                }
+              </PDFDownloadLink>
+            </button>
           </div>
         </Fragment>
       )}

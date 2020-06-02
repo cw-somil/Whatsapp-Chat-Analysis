@@ -12,6 +12,7 @@ import Navbar from "./components/layout/Navbar"
 import Hero from "./components/layout/Hero"
 import ReactGa from "react-ga"
 import Footer from "./components/layout/Footer"
+import SearchBar from "./components/SearchBar"
 
 ReactGa.initialize("UA-167965521-1")
 
@@ -30,6 +31,7 @@ function App() {
           <Route exact path="/months" component={MonthPage} />
           <Route exact path="/days" component={DayPage} />
           <Route exact path="/topics" component={TopicPage} />
+          <Route exact path="/search" component={SearchBar} />
         </Switch>
       </Fragment>
       <Footer />

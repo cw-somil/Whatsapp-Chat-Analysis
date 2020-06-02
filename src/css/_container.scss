@@ -14,7 +14,7 @@
   flex-wrap: wrap;
   width: 100%;
   padding: 1rem 0;
-  background-color: rgb(75, 75, 75);
+  background-color: var(--sec-bg-color);
 
   .dash-items {
     display: flex;
@@ -70,6 +70,59 @@
       height: 7rem;
       width: 15rem;
       background-color: #e8ffe8;
+    }
+  }
+}
+
+.search-container {
+  margin: 2rem 0;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  flex-wrap: wrap;
+  .search-bar {
+    background-color: rgb(65, 65, 65);
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: white;
+    font-weight: 500;
+    font-size: 1.2rem;
+    outline: none;
+    width: 100%;
+    margin-bottom: 2rem;
+    transition: all 0.5s;
+  }
+  .search-bar:focus {
+    box-shadow: 0 0 20px rgb(51, 51, 51);
+  }
+
+  .yt-card {
+    width: 240px;
+    height: 300px;
+    margin-right: 1rem;
+    border-radius: 1rem;
+    background-color: rgb(50, 50, 50);
+    margin-bottom: 1rem;
+    img {
+      border-radius: 1rem 1rem 0 0;
+      width: 240px;
+      object-fit: cover;
+    }
+    h1 {
+      padding: 0 1rem;
+      font-size: 1rem;
+      text-align: center;
+    }
+    a {
+      color: white;
+      transition: all 0.5s;
+    }
+    a:hover {
+      color: var(--primary);
     }
   }
 }

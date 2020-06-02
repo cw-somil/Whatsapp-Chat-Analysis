@@ -18,6 +18,24 @@ input[type="submit"]:hover {
           transform: scale(1.05);
 }
 
+.btn-outline {
+  border: none;
+  border-radius: 1.5rem;
+  background: none;
+  color: white;
+  border: 1px solid white;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.8rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.btn-outline:hover {
+  background-color: white;
+  color: black;
+}
+
 .container {
   padding: 5rem;
   display: -webkit-box;
@@ -47,7 +65,7 @@ input[type="submit"]:hover {
       flex-wrap: wrap;
   width: 100%;
   padding: 1rem 0;
-  background-color: #4b4b4b;
+  background-color: var(--sec-bg-color);
 }
 
 .dashboard .dash-items {
@@ -148,6 +166,75 @@ input[type="submit"]:hover {
   background-color: #e8ffe8;
 }
 
+.search-container {
+  margin: 2rem 0;
+  padding: 1rem 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.search-container .search-bar {
+  background-color: #414141;
+  border: none;
+  padding: 1rem;
+  border-radius: 1rem;
+  color: white;
+  font-weight: 500;
+  font-size: 1.2rem;
+  outline: none;
+  width: 100%;
+  margin-bottom: 2rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.search-container .search-bar:focus {
+  -webkit-box-shadow: 0 0 20px #333333;
+          box-shadow: 0 0 20px #333333;
+}
+
+.search-container .yt-card {
+  width: 240px;
+  height: 300px;
+  margin-right: 1rem;
+  border-radius: 1rem;
+  background-color: #323232;
+  margin-bottom: 1rem;
+}
+
+.search-container .yt-card img {
+  border-radius: 1rem 1rem 0 0;
+  width: 240px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.search-container .yt-card h1 {
+  padding: 0 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.search-container .yt-card a {
+  color: white;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.search-container .yt-card a:hover {
+  color: var(--primary);
+}
+
 .hero {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -163,7 +250,7 @@ input[type="submit"]:hover {
   padding: 1rem;
   height: 100vh;
   color: var(--text-color);
-  background-color: #4b4b4b;
+  background-color: var(--sec-bg-color);
 }
 
 .hero h1 {
@@ -186,6 +273,48 @@ input[type="submit"]:hover {
 
 .w-60 {
   width: 60%;
+}
+
+.faq {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: wheat;
+  padding: 2rem 2rem;
+  border-radius: 1rem;
+  margin-top: 1.5rem;
+}
+
+.faq h1 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.faq div {
+  background-color: #fad284;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.faq div h2 {
+  margin-bottom: 0.5rem;
+}
+
+.faq div p {
+  font-size: 1.2rem;
+}
+
+.faq div p span {
+  font-weight: bold;
 }
 
 .tooltip-container {
@@ -263,7 +392,7 @@ input[type="submit"]:hover {
 }
 
 .navbar {
-  background-color: #313131;
+  background-color: var(--sec-bg-color);
   padding: 1.5rem 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -279,12 +408,12 @@ input[type="submit"]:hover {
 .navbar .brand {
   color: var(--text-color);
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .navbar .developer {
   color: var(--text-color);
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .card {
@@ -303,7 +432,7 @@ input[type="submit"]:hover {
           align-items: center;
   margin: 1rem;
   padding: 0rem;
-  border: 1px solid #3b3b3b;
+  border: 1px solid #5f5f5f;
   border-radius: 2rem;
   -webkit-transition: all 1s;
   transition: all 1s;
@@ -311,7 +440,7 @@ input[type="submit"]:hover {
 
 .card .btn-card {
   width: 100%;
-  background-color: #e8505b;
+  background-color: var(--primary);
   border: none;
   border-radius: 1.5rem;
   color: white;
@@ -338,18 +467,28 @@ input[type="submit"]:hover {
 }
 
 .card:hover {
-  -webkit-box-shadow: 0 0 15px rgba(58, 58, 58, 0.911);
-          box-shadow: 0 0 15px rgba(58, 58, 58, 0.911);
+  -webkit-box-shadow: 0 0 20px rgba(54, 54, 54, 0.911);
+          box-shadow: 0 0 20px rgba(54, 54, 54, 0.911);
 }
 
 .alert {
-  width: 100%;
-  padding: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.8rem;
   margin: 1rem;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
-  color: var(--text-color);
+  border-radius: 2rem;
+  color: white;
+  background-color: black;
 }
 
 form {
@@ -363,6 +502,7 @@ form {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 1rem;
 }
 
 .custom-file-upload::-webkit-file-upload-button {
@@ -407,7 +547,7 @@ input[type="file"] {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 100%;
-  background-color: #4b4b4b;
+  background-color: var(--sec-bg-color);
   padding: 3rem 2rem;
 }
 
@@ -433,17 +573,14 @@ a {
 }
 
 :root {
-  --bg-color: rgb(49, 49, 49);
+  --bg-color: rgb(36, 36, 36);
+  --sec-bg-color: rgb(36, 36, 36);
+  --primary: #e8505b;
   --text-color: rgb(180, 180, 180);
 }
 
 html {
   background-color: var(--bg-color);
-}
-
-.note {
-  color: var(--text-color);
-  margin-top: 4rem;
 }
 
 .howto {
@@ -455,7 +592,11 @@ html {
     padding: 1rem;
   }
   .navbar {
-    padding: 1.5rem 1rem;
+    padding: 1rem 1rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .hero {
     -webkit-box-orient: vertical;

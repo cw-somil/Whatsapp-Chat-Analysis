@@ -10,7 +10,7 @@ const UploadChat = () => {
     completeData: null,
     loading: false,
     filename: "Upload Your Chat File",
-    err: "",
+    err: null,
     filesize: null,
   })
 
@@ -35,7 +35,7 @@ const UploadChat = () => {
       try {
         setData({ loading: true })
 
-        const res = await axios.post("http://165.22.208.188/upload", postData, {
+        const res = await axios.post("http://localhost:5000/upload", postData, {
           timeout: 150000,
           headers: {
             "Content-Type": "multipart/form-data",
@@ -69,17 +69,20 @@ const UploadChat = () => {
                 state: data.completeData,
               }}
             />
-          ) : (
-            <div className="alert">
-              {data.err}
-              <br />
-              {data.filename}
-            </div>
-          )}
+          ) : null}
           {data.loading ? (
             <Loader type="Bars" color="#ffffff" height={80} width={80} />
           ) : (
             <Fragment>
+              {data.err ? (
+                <div className="alert">
+                  <h2>{data.err}</h2>
+                </div>
+              ) : null}
+              <div className="alert">
+                <h2>{data.filename}</h2>
+              </div>
+
               <form onSubmit={(e) => submitChat(e)}>
                 <input
                   type="file"
@@ -89,12 +92,38 @@ const UploadChat = () => {
                 />
                 <input type="submit" name="submit" />
               </form>
-              <h3 className="note" style={{ textAlign: "center" }}>
-                NO PERSONAL DATA IS STORED ON THE SERVERS. FILE SIZE LIMIT:
-                2.5Mb
-                <br /> Note: The processing usually takes 10-20 seconds due to
-                heavy NLP computations.
-              </h3>
+              <div className="faq">
+                <h1>FAQs (Frequently Asked Questions)</h1>
+                <div>
+                  <h2>Q.) Do you store my data?</h2>
+                  <p>
+                    <span>ANS: </span>NO PERSONAL DATA IS STORED ON THE
+                    SERVERS.All the Computation is done on the go!
+                  </p>
+                </div>
+                <div>
+                  <h2>Q.) What Formats are Accepted?</h2>
+                  <p>
+                    <span>ANS: </span>Only Whatsapp Exported "txt" file is
+                    accepted.
+                  </p>
+                </div>
+                <div>
+                  <h2>Q.) How much time the Processing take?</h2>
+                  <p>
+                    <span>ANS: </span>For a Text File of size 1MB, the
+                    processing takes around <span>10-15 seconds</span>,
+                    sometimes lesser.
+                  </p>
+                </div>
+                <div>
+                  <h2>Q.) How do I export the Whatsapp Chat?</h2>
+                  <p>
+                    <span>ANS: </span>Scroll down for detailed instructions on
+                    how to export your chat.
+                  </p>
+                </div>
+              </div>
             </Fragment>
           )}
         </div>
