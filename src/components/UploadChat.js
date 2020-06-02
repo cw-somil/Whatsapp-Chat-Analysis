@@ -35,7 +35,7 @@ const UploadChat = () => {
       try {
         setData({ loading: true })
 
-        const res = await axios.post("http://localhost:5000/upload", postData, {
+        const res = await axios.post("http://165.22.208.188/upload", postData, {
           timeout: 150000,
           headers: {
             "Content-Type": "multipart/form-data",
