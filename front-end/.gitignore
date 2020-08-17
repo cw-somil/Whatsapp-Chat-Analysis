@@ -21,9 +21,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-
-.ipynb_checkpoints
-__pycache__
-staged_helper_funcs.py_files
-.env
