@@ -47,7 +47,9 @@ def upload():
             return Response("", status=500)
         b = time()
         print("TOTAL TIME TAKEN is {}".format(b-a))
-        return Response(json.dumps(data), status=200, mimetype="application/json")
+        return Response(json.dumps(data),
+                        status=200,
+                        mimetype="application/json")
     else:
         print("Server Error")
         return Response("Server Error", status=500)
@@ -71,7 +73,9 @@ def gen_topics():
     except:
         return Response("", status=500)
 
-    return Response(json.dumps({"data": gentopics}), status=200, mimetype="application/json")
+    return Response(json.dumps({"data": gentopics}),
+                    status=200,
+                    mimetype="application/json")
 
 
 if __name__ == "__main__":
