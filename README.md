@@ -4,6 +4,8 @@
 
 Detailed and Beautiful Analysis for your decade long Whatsapp Chats within seconds!
 
+### Note: The Live Version Doesn't work temporarily since my Backend Hosting has expired :(. I will try my best to get it back live. Till then you can check the demo in my LinkedIn Post
+
 ### Link to Post
 
 [LinkedIn Post For Watanalysis](https://www.linkedin.com/posts/somil-shah-9761a9138_python-reactjs-datascience-activity-6672509155095523328-chlS)
